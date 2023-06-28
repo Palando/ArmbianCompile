@@ -1,7 +1,7 @@
 all:
   hosts:
 %{ for index, ip in nodes ~}
-    rancher-mgmt-${index + 1}:
+    odorid-compile:
       ansible_host: ${ip}
 %{ endfor ~}
   vars:
