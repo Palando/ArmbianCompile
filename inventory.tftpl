@@ -1,0 +1,8 @@
+all:
+  hosts:
+%{ for index, ip in nodes ~}
+    rancher-mgmt-${index + 1}:
+      ansible_host: ${ip}
+%{ endfor ~}
+  vars:
+    ansible_user: ${user}

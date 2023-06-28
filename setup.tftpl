@@ -1,0 +1,5 @@
+#!/bin/bash
+%{ for index, ip in nodes ~}
+ssh-keygen -R ${ip}
+ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts
+%{ endfor ~}
